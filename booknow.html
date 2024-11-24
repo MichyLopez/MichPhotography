@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Michelynnes Photography Book Now</title>
+<link rel="icon" type="image/x-icon" href="Photos/Logo.png">
+<link rel="stylesheet" href="main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="container">
+	<header><h1 class="vibes">Book now!</h1></header>
+	
+	<ul>
+		<li><a class="link" href="index.html">Home</a></li>
+		<li><a class="link" href="aboutme.html">About me</a></li>
+		<li><a class="link" href="Prices.html">Prices</a></li>
+		<li><a class="active" href="BookNow.html">Book Now!</a></li>
+		<li style="float:right"><a class="link" href="photolibrary.html" >Photo Library</a></li>
+	</ul>
+	
+<div class="flex-container">
+	<div class="left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gKMVI9NezeQ?si=8yBeYjA6fMq2GN8t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+</div>
+	<div class="flex-container"> 
+	<div class="flex-responsive">
+			<form action="/action_page.php">
+				<label for="fname">First name:</label><br>
+				<input type="text" id="fname" name="fname"><br>
+				<label for="lname">Last name:</label><br>
+				<input type="text" id="lname" name="lname"><br>
+				<p>What Photoshoot Session did you have in mind:</p>
+		<form>
+			<input type="checkbox" id="passport" name="fav_language" value="passport">
+			<label for="passport">Passport Photos</label><br>
+			<input type="checkbox" id="portrait" name="fav_language" value="portrait">
+			<label for="portrait">Portrait Photos</label><br>
+			<input type="checkbox" id="graduation" name="fav_language" value="graduation">
+			<label for="graduation">Graduation Photos</label><br>
+			<input type="checkbox" id="sports" name="fav_language" value="sports">
+			<label for="sports">Sports Action Photos</label><br>
+		</form> 
+	<form>
+  <textarea>Some text...</textarea>
+</form>
+			</form>
+		</div>
+		<div class="left">
+		<p>Click the button to get your coordinates.<br> Are any of the locations listed above near?<br> If not please put any requested locations</p><br>
+			<p id="demo"></p>
+<button onclick="getLocation()">Try It</button>
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script><br>
+			
+	<input type="submit" value="Submit">
+		</div>
+</div>
+	
+	<footer>
+		<h2>Copyright Michelynne Lopez &#169;</h2>
+	</footer>
+	
+</div>
+</body>
+</html>
