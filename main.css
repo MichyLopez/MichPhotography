@@ -26,7 +26,7 @@ header {
 	font-size: 20px;
 }
 footer {
-  background-color: rgba(227,221,213,.60);
+  background-color: rgba(227,221,213,.30);
   color: rgba(0,0,0,1.00);
   text-align: center;
   font-size: 12px;
@@ -36,7 +36,7 @@ footer {
 /*nav bar*/
 body{
 	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
-	background-color: rgba(227,221,213,1.00);
+	background-image: linear-gradient(to bottom right, rgba(234, 163, 148, 0.4), rgba(235, 131, 77, 0.7));
 	text-align: center;
 }
 
@@ -109,7 +109,7 @@ input[type=text] {
   border-bottom: 2px solid pink;
 }
 input[type=text]:focus {
-  background-color: lightgoldenrodyellow;
+  background-color: rgba(229,234,240,0.50);
 }
 div.myform{
 	width: 100%;
@@ -118,7 +118,7 @@ div.myform{
 	
 }
 input[type=submit] {
-  background-color: rgba(57,77,84,0.80);
+  background-color: rgba(57,77,84,1.00);
   border: none;
   color: white;
   padding: 16px 32px;
@@ -251,6 +251,7 @@ input[type=submit] {
 .modal-navigation button:hover {
     color: #ddd;
 }
+
 @media only screen and (min-width: 767px) {
 	#container{
 	width: 800px;
@@ -283,6 +284,25 @@ input[type=submit] {
 .flex-responsive {
     flex: 50%;
 }
+.flex-responsive2 {
+    display: none;
+}
+	.flex-container3 {
+    display: flex;
+    background-color: rgba(148,65,63,0.50);
+	margin: 10px;
+
+}
+.flex-container3 > div {
+    background-color: rgba(227,221,213,.60);
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.video {
+    flex-grow: 3;
+}
 	ul {
 	list-style-type: none;
 	margin: 0;
@@ -304,14 +324,40 @@ li a {
 	text-decoration: none;
 }
 li a:hover{
-	color: #394D54;
+	color: rgba(229,234,240,0.50);
 	font-size: 115%;
-	background-color: rgba(197,146,147,.50);
+	background-color: #394D54;
 }
 .active {
 	background-color:rgba(229,234,240,0.50);
 	color: #394D54;
 }
+.pricegallery {
+	width: 80%;
+	margin: 20px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	}
+.space {
+	text-align: center;
+	flex: 1;
+	}
+.space img {
+	max-width: 100%;
+	width: 300px;
+	height:120px;
+	}
+.price {
+	margin-top: 10px;
+	font-size: 1.2rem;
+	color: #333;
+	}
 }
 
 @media only screen and (max-width: 768px){
@@ -379,4 +425,12 @@ li:hover {
 .flex-responsive {
     flex: 50%;
 }
+.space img {
+	max-width: 100%;
+	width: 300px;
+	height:120px;
+	}
+	.flex-container3{
+		display: none;
+	}
 }
