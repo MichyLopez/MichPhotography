@@ -100,34 +100,29 @@ div.desc {
 }
 
 /* book now */
-input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid pink;
-}
-input[type=text]:focus {
-  background-color: rgba(229,234,240,0.50);
-}
-div.myform{
+form {
+	max-width: 400px;
+	margin: 0 auto;
+	}
+label {
+	display: block;
+	margin-bottom: 1px;
+	}
+input, textarea, button {
 	width: 100%;
-	height:auto;
-	baackground-color:pink;
-	
-}
-input[type=submit] {
-  background-color: rgba(57,77,84,1.00);
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-
+	padding: 10px;
+	margin-bottom: 15px;
+	}
+button {
+	background-color: #833533;
+	color: white;
+	border: none;
+	cursor: pointer;
+	}
+.success-message {
+	color: green;
+	font-weight: bold;
+	}
 /* about camera */
 .button {
   background-color: white;
@@ -140,7 +135,7 @@ input[type=submit] {
 	cursor: pointer;
 }
 
-/*gallery*/
+
 /* Tabs Styling */
 .tabs {
     margin: 20px auto;
@@ -162,6 +157,7 @@ input[type=submit] {
 .tab:hover {
     background: rgba(62,141,115,0.60);
     transform: rotate(-3deg) scale(1.1);
+	cursor: pointer;
 }
 
 .tab.active {

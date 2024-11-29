@@ -28,52 +28,100 @@
 	<div class="row">
 		<div class="space">
 		<img src="Photos/Placeholder.svg" alt="Location 1">
-			<p>Suggested Loction 1</p>
+			<p>Japanesse Tea Garden</p>
      		</div>
     <div class="space">
         <img src="Photos/Placeholder.svg" alt="Location 2">
-		<p>Suggested Loction 2</p>
+		<p>The Pearl</p>
             </div>
     <div class="space">
        <img src="Photos/Placeholder.svg" alt="Location 3">
-		<p>Suggested Loction 3</p>
+		<p>School</p>
             </div>
         </div>
 	</div>
-	</div>
-	</div>
-	<div class="flex-container3">
-	<div class="video">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gKMVI9NezeQ?si=8yBeYjA6fMq2GN8t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-	</div>
 </div>
-	<div class="flex-container"> 
+</div>
+<div class="flex-container">
 	<div class="flex-responsive">
-			<form action="/action_page.php">
-				<label for="fname">First name:</label><br>
-				<input type="text" id="fname" name="fname"><br>
-				<label for="lname">Last name:</label><br>
-				<input type="text" id="lname" name="lname"><br>
-				<p>What Photoshoot Session did you have in mind:</p>
-		<form>
-			<input type="checkbox" id="passport" name="fav_language" value="passport">
-			<label for="passport">Passport Photos</label><br>
-			<input type="checkbox" id="portrait" name="fav_language" value="portrait">
-			<label for="portrait">Portrait Photos</label><br>
-			<input type="checkbox" id="graduation" name="fav_language" value="graduation">
-			<label for="graduation">Graduation Photos</label><br>
-			<input type="checkbox" id="sports" name="fav_language" value="sports">
-			<label for="sports">Sports Action Photos</label><br>
-		</form> 
-	<form>
-  <textarea>Some text...</textarea>
-</form>
-			</form>
-			
-	<input type="submit" value="Submit">
-		</div>
-</div>
+		<form id="contactForm" method="post">
+    	<label for="fname">First name:</label><br>
+    	<input type="text" id="fname" name="fname" required><br>
 	
+    	<label for="lname">Last name:</label><br>
+    	<input type="text" id="lname" name="lname" required><br>
+	
+    	<label for="email">Email:</label><br>
+    	<input type="text" id="email" name="email" required><br>
+	
+    	<p>Which services are you interested in?</p>
+	
+    	<label><input type="checkbox" id="passport" name="services" value="passport"> Passport Photos</label><br>
+    	<label><input type="checkbox" id="portrait" name="services" value="portrait"> Portrait Photos</label><br>
+    	<label><input type="checkbox" id="graduation" name="services" value="graduation"> Graduation Photos</label><br>
+    	<label><input type="checkbox" id="sports" name="services" value="sports"> Sports Action Photos</label><br>
+			
+		<label for="date">Preferred Date:</label><br>
+		<input type="date" id="date" name="date" required><br>
+
+		<label for="time">Preferred Time:</label><br>
+		<input type="time" id="time" name="time" required><br>
+	
+    	<label for="locations">For any suggested locations please enter them down below:</label><br>
+    	<textarea id="locations" name="locations" rows="2" cols="30"></textarea><br>
+	
+    	<label for="message">Is there anything I may need to know:</label><br>
+    	<textarea id="message" name="message" rows="5"></textarea><br>
+	
+    	<button type="submit">Submit</button>
+</form>
+<div id="output" class="success-message" style="display: none;"></div>
+	</div>
+</div>
+<script>
+    // JavaScript to handle form submission
+    const form = document.getElementById('contactForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent the form from refreshing or navigating
+
+        // Get form data
+        const firstName = document.getElementById('fname').value;
+        const lastName = document.getElementById('lname').value;
+        const email = document.getElementById('email').value;
+		const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const locations = document.getElementById('locations').value;
+        const additionalMessage = document.getElementById('message').value;
+
+        // Get selected checkbox values
+        const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+        const selectedServices = Array.from(checkboxes).map(checkbox => checkbox.value);
+		
+		const formattedTime = formatTimeTo12Hour(time);
+
+        // Display success message
+        output.style.display = 'block';
+        output.innerHTML = `
+            <p>Thank you, ${firstName} ${lastName}, for scheduling an appointment with me!</p>
+			<p>Your preferred date and time: <strong>${date}</strong> at <strong>${formattedTime}</strong>.</p>
+            <p>I will reach out to you at <strong>${email}</strong> soon.</p>
+        `;
+
+        // Clear the form
+        form.reset();
+    });
+	
+	function formatTimeTo12Hour(time) {
+    const [hours, minutes] = time.split(':');
+    const hour = parseInt(hours, 10);
+    const isPM = hour >= 12;
+    const formattedHour = hour % 12 || 12;
+    const period = isPM ? 'PM' : 'AM';
+    return `${formattedHour}:${minutes} ${period}`;
+}
+</script>
 	<footer>
 		<h2>Copyright Michelynne Lopez &#169;</h2>
 	</footer>
