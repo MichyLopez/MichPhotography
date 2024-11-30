@@ -33,49 +33,15 @@ footer {
   padding: 15px;
 }
 
-/*nav bar*/
+/*body*/
 body{
 	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
 	background-image: linear-gradient(to bottom right, rgba(234, 163, 148, 0.4), rgba(235, 131, 77, 0.7));
 	text-align: center;
 }
 
-/*flex*/
-
 h2{
 	font-size: 15px;
-}
-
-div.ex1 {
-	background-color: rgba(254,255,146,.50);
-	width: 360px;
-	height: 110px;
-	overflow: scroll;
-	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
-}
-
-/* prices page */
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th{
-	background-color: rgba(148,65,63,.50);
-	height: 30px;
-	text-align: center;
-	font-size: 18px;
-}
-td {
-	text-align: left;
-	padding: 8px;
-}
-tr:nth-child(odd) {background-color: rgba(227,221,213,.20)
-}
-
-dl.list{
-	list-style-type: upper-roman;
-	margin: 0px;
-	padding: 0;
 }
 
 /* library page */
@@ -103,6 +69,7 @@ div.desc {
 form {
 	max-width: 400px;
 	margin: 0 auto;
+	text-align: left;
 	}
 label {
 	display: block;
@@ -111,7 +78,7 @@ label {
 input, textarea, button {
 	width: 100%;
 	padding: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 10px ;
 	}
 button {
 	background-color: #833533;
@@ -343,6 +310,7 @@ li a:hover{
 .space {
 	text-align: center;
 	flex: 1;
+	box-shadow: 10px 10px;
 	}
 .space img {
 	max-width: 100%;
@@ -354,6 +322,12 @@ li a:hover{
 	font-size: 1.2rem;
 	color: #333;
 	}
+.meText{
+	height: 531px;
+	text-align: left;
+	overflow: scroll;
+	box-shadow: 10px 10px rgba(239, 239, 240, 0.4);;
+}
 }
 
 @media only screen and (max-width: 768px){
@@ -414,6 +388,7 @@ li:hover {
 .right {
     flex-grow: 1;
 }
+
 .stack > div {
     flex-direction: column;
     padding: 20px;
