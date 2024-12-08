@@ -14,20 +14,25 @@
 
 <body>
 	<div id="container"> 
-	 <header>
+	 <header class="header">
+		 <img class="logo" src="Photos/LogoTransparent.png" alt="logo">
         <h1 class="vibes">Michelynnes Photo Gallery!</h1>
     </header>
-	<ul>
-		<li><a class="active" href="index.html">Home</a></li>
-		<li><a class="link" href="aboutme.html">About me</a></li>
-		<li><a class="link" href="prices.html">Prices</a></li>
-		<li><a class="link" href="booknow.html">Book Now!</a></li>
-		<li style="float:right"><a class="link" href="photogallery.html" >Photo Library</a></li>
-	</ul>
+		<nav><ul>
+			<div class="left-links">
+            	<li><a class="link" href="index.html">Home</a></li>
+            	<li><a class="link" href="aboutme.html">About Me</a></li>
+            	<li><a class="link" href="prices.html">Prices</a></li>
+            	<li><a class="link" href="booknow.html">Book Now!</a></li>
+        	</div>
+        	<div class="right-links">
+            	<li><a class="active" href="photogallery.html">Photo Library</a></li>
+        	</div>
+		</ul></nav>
 
     <!-- Tabs for Different Types of Photography -->
-		<div class="flex-container">
-		<div class="flex-responsive">
+		<div class="container1">
+		<div class="item1">
 			<p>Explore the wonderful world of photography</p>
     <div class="tabs">
         <button class="tab" onclick="showCategory('event')">Events</button>
@@ -65,60 +70,60 @@
 		
 		<div id="modal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+        <img class="modal-content" id="modalImage" alt=".">
         <div class="modal-navigation">
             <button onclick="prevImage()">&#10094;</button>
             <button onclick="nextImage()">&#10095;</button>
         </div>
     </div>
-		 <script>
-			 function showCategory(category) {
-    // Hide all gallery categories
-    const categories = document.querySelectorAll('.gallery-category');
-    categories.forEach((cat) => cat.classList.remove('active'));
+<script>
+function showCategory(category) {
+// Hide all gallery categories
+const categories = document.querySelectorAll('.gallery-category');
+categories.forEach((cat) => cat.classList.remove('active'));
 
-    // Remove active class from all tabs
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach((tab) => tab.classList.remove('active'));
+// Remove active class from all tabs
+const tabs = document.querySelectorAll('.tab');
+tabs.forEach((tab) => tab.classList.remove('active'));
 
-    // Show selected category and highlight the tab
-    document.getElementById(category).classList.add('active');
-    document.querySelector(`.tab[onclick="showCategory('${category}')"]`).classList.add('active');
-			 }
-			 let currentImageIndex = 0;
-			 const images = document.querySelectorAll(".gallery-item img");
-			 const modal = document.getElementById("modal");
-			 const modalImage = document.getElementById("modalImage");
-			 
-			 // Function to open the modal and display the clicked image
-			 function openModal(index) {
-				 currentImageIndex = index;
-				 modal.style.display = "block";
-				 modalImage.src = images[currentImageIndex].src;
-			 }
-
-			 // Function to close the modal
-			 function closeModal() {
-				 modal.style.display = "none";
-			 }
-			 
-			 // Function to show the next image
-			 function nextImage() {
-				 currentImageIndex = (currentImageIndex + 1) % images.length;
-				 modalImage.src = images[currentImageIndex].src;
-			 }
-			 // Function to show the previous image
-			 function prevImage() {
-				 currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-				 modalImage.src = images[currentImageIndex].src;
+// Show selected category and highlight the tab
+document.getElementById(category).classList.add('active');
+document.querySelector(`.tab[onclick="showCategory('${category}')"]`).classList.add('active');
 }
-			 // Close the modal when clicking outside the image
-			 window.onclick = function(event) {
-				 if (event.target == modal) {
-					 closeModal();
-				 }
-			 }
-		</script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll(".gallery-item img");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+			 
+// Function to open the modal and display the clicked image
+function openModal(index) {
+currentImageIndex = index;
+modal.style.display = "block";
+modalImage.src = images[currentImageIndex].src;
+}
+
+// Function to close the modal
+function closeModal() {
+modal.style.display = "none";
+}
+			 
+// Function to show the next image
+function nextImage() {
+currentImageIndex = (currentImageIndex + 1) % images.length;
+modalImage.src = images[currentImageIndex].src;
+}
+// Function to show the previous image
+function prevImage() {
+currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+modalImage.src = images[currentImageIndex].src;
+}
+// Close the modal when clicking outside the image
+window.onclick = function(event) {
+if (event.target == modal) {
+closeModal();
+}
+}
+</script>
 			</section>
 			</div>
 		</div>

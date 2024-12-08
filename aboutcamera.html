@@ -13,43 +13,35 @@
 
 <body>
 	<div id="container">
-	<header><h1 class="vibes">The Camera &#128247;</h1></header>
-		<ul>
-		<li><a class="link" href="index.html">Home</a></li>
-		<li><a class="link" href="aboutme.html">About Me</a></li>
-		<li><a class="link" href="prices.html">Prices</a></li>
-		<li><a class="link" href="booknow.html">Book Now!</a></li>
-		<li style="float:right"><a class="link" href="photogallery.html" >Photo Library</a></li> <!--not ready-->
-		</ul>
-	</div>	
-<div class="flex-container">
-	<div class="flex-responsive">
-<p>I use a Canon Eos rp. It is  mirrorless camera with a RF of 24-105mm f/7.1</p>
-
-<img id="camera" src="Photos/camera.png" alt="camera" width="0" height="0">
-<p><button class="button" onclick="myCanvas()">Click Here</button></p>	
-<canvas id="myCanvas" width="500" height="300"
-style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML canvas tag.</canvas>
-
-<script>
-function myCanvas() {
-  var c = document.getElementById("myCanvas");
-  var ctx = c.getContext("2d");
-  var img = document.getElementById("camera");
-  ctx.drawImage(img,10,10,450,280);
-}
-</script>
-<canvas id="canvast" width="0" height="0" style="border:0px solid #d3d3d3;">
-Your browser does not support the HTML canvas tag.</canvas>
-
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.font = "30px Arial";
-ctx.strokeText("Click the button to see me", 90, 75);
-</script>
+		<header>
+			<img class="logo" src="Photos/LogoTransparent.png" alt="logo">
+			<h1 class="vibes">The Camera &#128247;</h1>
+		</header>
+			<nav><ul>
+				<div class="left-links">
+            		<li><a class="link" href="index.html">Home</a></li>
+            		<li><a class="link" href="aboutme.html">About Me</a></li>
+            		<li><a class="link" href="prices.html">Prices</a></li>
+            		<li><a class="link" href="booknow.html">Book Now!</a></li>
+        		</div>
+        		<div class="right-links">
+            		<li><a class="link" href="photogallery.html">Photo Library</a></li>
+        		</div>
+			</ul></nav>
+		
+	<div class="container1">
+		<div class="item1">
+			<h2>The Cameras I Use</h2>
+			<div class="item3">
+			<p>For Christmas I was gifted a <a href="https://global.canon/en/c-museum/product/dslr848.html">Canon Rebel T6</a>. I have use this camera for years with no issues</p>
+			<img class="camera" src="Photos/camera2.png" alt="camera2">
+			</div>
+			<div class="item3">
+				<p>After a few years I saved up some money and bought a <a href="https://global.canon/en/c-museum/product/dslr880.html">Canon Eos rp</a>. It is  mirrorless camera with a RF of 24-105mm f/7.1</p>
+				<img class="camera" src="Photos/camera.png" alt="camera1">	
+			</div>	
 		</div>
+	</div>
 </div>
 </body>
 </html>

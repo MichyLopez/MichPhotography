@@ -13,107 +13,114 @@
 
 <body>
 <div id="container">
-	<header><h1 class="vibes">Book now!</h1></header>
+	<header class="header">
+		<img class="logo" src="Photos/LogoTransparent.png" alt="logo">
+		<h1 class="vibes">Book now!</h1>
+	</header>
+	<nav><ul>
+				<div class="left-links">
+            		<li><a class="link" href="index.html">Home</a></li>
+            		<li><a class="link" href="aboutme.html">About Me</a></li>
+            		<li><a class="link" href="prices.html">Prices</a></li>
+            		<li><a class="active" href="booknow.html">Book Now!</a></li>
+        		</div>
+        		<div class="right-links">
+            		<li><a class="link" href="photogallery.html">Photo Library</a></li>
+        		</div>
+			</ul></nav>
 	
-	<ul>
-		<li><a class="link" href="index.html">Home</a></li>
-		<li><a class="link" href="aboutme.html">About me</a></li>
-		<li><a class="link" href="prices.html">Prices</a></li>
-		<li><a class="active" href="booknow.html">Book Now!</a></li>
-		<li style="float:right"><a class="link" href="photogallery.html" >Photo Library</a></li>
-	</ul>
-	
-<div class="flex-container">
-	<div class="flex-responsive">
-	<div class="pricegallery">
-	<div class="row">
-		<div class="space">
-		<img src="Photos/Placeholder.svg" alt="Location 1">
-			<p>Japanesse Tea Garden</p>
-     		</div>
-    <div class="space">
-        <img src="Photos/Placeholder.svg" alt="Location 2">
-		<p>The Pearl</p>
-            </div>
-    <div class="space">
-       <img src="Photos/Placeholder.svg" alt="Location 3">
-		<p>School</p>
-            </div>
-        </div>
+	<div class="container1">
+		<div class="item1">
+			<div class="pricegallery">
+				<div class="bookrow">
+					<div class="bookspace">
+						<img src="Photos/JapanesseTG.jpg" alt="Location 1">
+						<p>Japanesse Tea Garden</p>
+     				</div>
+					<div class="bookspace">
+						<img src="Photos/ThePearl.jpg" alt="Location 2">
+						<p>The Pearl</p>
+					</div>
+					<div class="bookspace">
+						<img src="Photos/RiverWalk.jpg" alt="Location 3">
+						<p>The River Walk </p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
-</div>
-<div class="flex-container">
-	<div class="flex-responsive">
-		<form id="contactForm" method="post">
-    	<label for="fname">First name:</label><br>
+	<div class="container1">
+		<div class="item1">
+			<form id="contactForm" method="post">
+    	<label for="fname"><h3>First name:</h3></label><br>
     	<input type="text" id="fname" name="fname" required><br>
 	
-    	<label for="lname">Last name:</label><br>
+    	<label for="lname"><h3>Last name:</h3></label><br>
     	<input type="text" id="lname" name="lname" required><br>
 	
-    	<label for="email">Email:</label><br>
+    	<label for="email"><h3>Email:</h3></label><br>
     	<input type="text" id="email" name="email" required><br>
 	
-    	<p>Which services are you interested in?</p>
+    	<h3>Which services are you interested in?</h3>
 	
     	<label>Passport Photos<input type="checkbox" id="passport" name="services" value="passport"></label><br>
     	<label>Portrait Photos<input type="checkbox" id="portrait" name="services" value="portrait"></label><br>
     	<label>Graduation Photos<input type="checkbox" id="graduation" name="services" value="graduation"></label><br>
     	<label>Sports Action Photos<input type="checkbox" id="sports" name="services" value="sports"></label><br>
 			
-		<label for="date">Preferred Date:</label><br>
+		<label for="date"><h3>Preferred Date:</h3></label><br>
 		<input type="date" id="date" name="date" required><br>
 
-		<label for="time">Preferred Time:</label><br>
+		<label for="time"><h3>Preferred Time:</h3></label><br>
 		<input type="time" id="time" name="time" required><br>
 	
-    	<label for="locations">For any suggested locations please enter them down below:</label><br>
+    	<label for="locations"><h3>For any suggested locations please enter them down below:</h3></label><br>
     	<textarea id="locations" name="locations" rows="2" cols="30"></textarea><br>
 	
-    	<label for="message">Is there anything I may need to know:</label><br>
+    	<label for="message"><h3>Is there anything I may need to know:</h3></label><br>
     	<textarea id="message" name="message" rows="5"></textarea><br>
 	
-    	<button type="submit">Submit</button>
+    	<button type="submit" class="submit">Submit</button>
 </form>
 <div id="output" class="success-message" style="display: none;"></div>
 	</div>
 </div>
 <script>
-    // JavaScript to handle form submission
-    const form = document.getElementById('contactForm');
-    const output = document.getElementById('output');
+	const form = document.getElementById('contactForm');
+	const output = document.getElementById('output');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent the form from refreshing or navigating
+	form.addEventListener('submit', (e) => {
+    	e.preventDefault(); // Prevent the form from refreshing or navigating
 
-        // Get form data
-        const firstName = document.getElementById('fname').value;
-        const lastName = document.getElementById('lname').value;
-        const email = document.getElementById('email').value;
-		const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        const locations = document.getElementById('locations').value;
-        const additionalMessage = document.getElementById('message').value;
+    // Get form data
+    const firstName = document.getElementById('fname').value;
+    const lastName = document.getElementById('lname').value;
+    const email = document.getElementById('email').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const locations = document.getElementById('locations').value;
+    const additionalMessage = document.getElementById('message').value;
 
-        // Get selected checkbox values
-        const checkboxes = document.querySelectorAll('input[name="services"]:checked');
-        const selectedServices = Array.from(checkboxes).map(checkbox => checkbox.value);
-		
-		const formattedTime = formatTimeTo12Hour(time);
+    // Get selected checkbox values
+    const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+    const selectedServices = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-        // Display success message
-        output.style.display = 'block';
-        output.innerHTML = `
-            <p>Thank you, ${firstName} ${lastName}, for scheduling an appointment with me!</p>
-			<p>Your preferred date and time: <strong>${date}</strong> at <strong>${formattedTime}</strong>.</p>
-            <p>I will reach out to you at <strong>${email}</strong> soon.</p>
-        `;
+    // Format time to 12-hour format
+    const formattedTime = formatTimeTo12Hour(time);
 
-        // Clear the form
-        form.reset();
-    });
-	
+    // Display success message
+    output.style.display = 'block';
+    output.innerHTML = `
+        <p>Thank you, ${firstName} ${lastName}, for scheduling an appointment with me!</p>
+        <p>Your preferred date and time: <strong>${date}</strong> at <strong>${formattedTime}</strong>.</p>
+        <p>I will reach out to you at <strong>${email}</strong> soon.</p>
+    `;
+
+    // Clear the form
+    form.reset();
+	});
+
+	// Function to format time to 12-hour format
 	function formatTimeTo12Hour(time) {
     const [hours, minutes] = time.split(':');
     const hour = parseInt(hours, 10);
@@ -121,7 +128,7 @@
     const formattedHour = hour % 12 || 12;
     const period = isPM ? 'PM' : 'AM';
     return `${formattedHour}:${minutes} ${period}`;
-}
+	}
 </script>
 	<footer>
 		<h2>Copyright Michelynne Lopez &#169;</h2>
